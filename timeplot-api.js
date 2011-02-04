@@ -8,7 +8,8 @@
 
 (function() {
 
-    var local = false;
+    var local = true;
+    var enableFirebug = false;
 
     // obtain local mode from the document URL    
     if (document.location.search.length > 0) {
@@ -107,7 +108,7 @@
 
         var timeplotURLPrefix = Timeplot.urlPrefix;
 
-        if (local && !("console" in window)) {
+        if (enableFirebug && !("console" in window)) {
             var firebug = [ timeplotURLPrefix + "lib/firebug/firebug.js" ];
             SimileAjax.includeJavascriptFiles(document, "", firebug);
         }

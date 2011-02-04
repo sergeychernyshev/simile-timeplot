@@ -34,6 +34,7 @@ Timeplot.create = function(elmt, plotInfos) {
 Timeplot.createPlotInfo = function(params) {
     return {   
         id:                ("id" in params) ? params.id : "p" + Math.round(Math.random() * 1000000),
+        label:             ("label" in params) ? params.label : '',
         dataSource:        ("dataSource" in params) ? params.dataSource : null,
         eventSource:       ("eventSource" in params) ? params.eventSource : null,
         timeGeometry:      ("timeGeometry" in params) ? params.timeGeometry : new Timeplot.DefaultTimeGeometry(),
